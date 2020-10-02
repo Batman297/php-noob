@@ -1,3 +1,6 @@
+<?php
+
+?>
 <html>
     <head><title>Belajar PHP untuk PEMULA</title></head>
     <body>
