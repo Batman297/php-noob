@@ -5,7 +5,7 @@ require 'functions.php';
 $id = $_GET["id"];
 
 // query data mahasiswa berdasarkan id
-$cars = query("SELECT * FROM cars WHERE id = $id")[0];
+$car = query("SELECT * FROM cars WHERE id = $id")[0];
 
 // cek apakah tombol submit sudah ditekan atau belum
 if( isset($_POST["submit"]) ) {
@@ -33,28 +33,30 @@ if( isset($_POST["submit"]) ) {
     <body>
         <h1>Ubah Data Mobil</h1>
 
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <input name="id" type="hidden" value="<?= $id ?>"/>
+            <input name="gambarLama" type="hidden" value="<?= $car["gambar"]; ?>"/>
             <ul>
                 <li>
                     <label for="nama">Nama :</label>
-                    <input id="nama" name="nama" type="text" value="<?= $cars["nama"]; ?>"/>
+                    <input id="nama" name="nama" type="text" value="<?= $car["nama"]; ?>"/>
                 </li>
                 <li>
                     <label for="tahun">Tahun :</label>
-                    <input id="tahun" name="tahun" type="text" value="<?= $cars["tahun"]; ?>"/>
+                    <input id="tahun" name="tahun" type="text" value="<?= $car["tahun"]; ?>"/>
                 </li>
                 <li>
                     <label for="transmisi">Transmisi :</label>
-                    <input id="transmisi" name="transmisi" type="text" value="<?= $cars["transmisi"]; ?>"/>
+                    <input id="transmisi" name="transmisi" type="text" value="<?= $car["transmisi"]; ?>"/>
                 </li>
                 <li>
                     <label for="harga">Harga :</label>
-                    <input id="harga" name="harga" type="text" value="<?= $cars["harga"]; ?>"/>
+                    <input id="harga" name="harga" type="text" value="<?= $car["harga"]; ?>" />
                 </li>
                 <li>
                     <label for="gambar">Gambar :</label>
-                    <input id="gambar" name="gambar" type="text" value="<?= $cars["gambar"]; ?>"/>
+                    <input id="gambar" name="gambar" type="file" value=""/><br>
+                    <img alt="" src="img/<?= $car["gambar"]; ?>"/>
                 </li>
                 <li>
                     <button type="submit" name="submit">Ubah Data!</button>
