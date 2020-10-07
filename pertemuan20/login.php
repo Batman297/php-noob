@@ -64,7 +64,7 @@ if( isset($_COOKIE["id"]) && isset($_COOKIE["username"]) ) {
     </head>
     <body>
         <h1>Halaman Login</h1>
-
+        <p>If you don't have any account please use "admin" as username and "admin" as password or you can create new account <a href="registrasi.php">HERE!</a></p>
         <?php if( isset($error) ) : ?>
             <p style="font-style: italic; color: red;">Username / Password Salah</p>
         <?php endif; ?>

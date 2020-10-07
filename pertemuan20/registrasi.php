@@ -1,5 +1,11 @@
 <?php
+session_start();
 require 'functions.php';
+
+if( isset($_SESSION["login"]) ) {
+    header("Location: index.php");
+    exit;
+}
 
 // cek kalau tombol register ditekan
 if( isset($_POST["register"]) ) {
@@ -7,6 +13,8 @@ if( isset($_POST["register"]) ) {
     // function registrasi
     if( registrasi($_POST) > 0 ) {
         echo "<script>alert('User baru berhasil ditambahkan!');</script>";
+        header("Location: login.php");
+        exit;
     } else {
         echo mysqli_error($conn);
     }
@@ -21,6 +29,8 @@ if( isset($_POST["register"]) ) {
     </head>
     <body>
         <h1>Halaman Reigstrasi</h1>
+
+        <p><a href="index.php">Home</a></p>
 
         <form action="" method="post">
             <ul>
@@ -41,5 +51,6 @@ if( isset($_POST["register"]) ) {
                 </li>
             </ul>
         </form>
+        <br/><br/>
     </body>
 </html>
