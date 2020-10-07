@@ -1,3 +1,3 @@
 # php-noob
 
-You can see the result [here!](http://php-noob.epizy.com/)
+You can see the result http://php-noob.epizy.com/
