@@ -38,6 +38,7 @@ if( isset($_POST["cari"]) ) {
 
         <a href="tambah.php">Tambah Data Mobil</a> |
         <a href="login.php">Login</a> |
+        <a href="registrasi.php">Registrasi</a> |
         <a href="logout.php">Logout</a>
         <br/><br/>
 

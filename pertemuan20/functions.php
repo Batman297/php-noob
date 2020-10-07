@@ -1,6 +1,6 @@
 <?php
 // koneksi ke database
-$conn = mysqli_connect("localhost", "root", "", "phpdasar");
+$conn = mysqli_connect("sql101.epizy.com", "epiz_26909871", "h5aqylwCFbyk", "epiz_26909871_phpdasar");
 
 // functions query
 function query($query) {
